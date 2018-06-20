@@ -1,0 +1,15 @@
+extends layout
+
+// console.log prints to browser/web console.
+block content
+    div
+        h1= title
+            
+    div(id="map-canvas", style="height:75%; width:75%;")
+    
+    // These two scripts will initialize the Google Map in the map-canvas div
+    script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=')
+    script(type='text/javascript', src='/javascripts/initGoogleMap.js')
+    
+    // This script will poll the database for an assignment. 
+    script(type='text/javascript', src='/javascripts/pollForAssignment.js')

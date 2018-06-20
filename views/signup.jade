@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    h1= title
+    script.
+        if ("geolocation" in navigator) {
+            /* geolocation is available */
+            navigator.geolocation.getCurrentPosition(function(position) {
+                document.getElementById("inputUserLon").value = position.coords.longitude;
+                document.getElementById("inputUserLat").value = position.coords.latitude;
+            });
+        } else {
+            /* geolocation is not available */
+        }
+
+    form#formAddUser(name="adduser",method="post",action="/adduser")
+        input#inputUserName(type="text", placeholder="username", name="username")
+        input#inputUserEmail(type="text", placeholder="useremail", name="useremail")
+        br
+        br
+        input#inputUserLon(type="text", placeholder="userlon", name="userlon", readonly)
+        input#inputUserLat(type="text", placeholder="userlat", name="userlat", readonly)
+        br
+        br
+        input#inputDriverCheckBox(type="checkbox", name="drivercheckbox") 
+        = "   I am a driver."
+        br
+        br
+        button#btnSubmit(type="submit") submit

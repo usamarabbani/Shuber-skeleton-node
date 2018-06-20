@@ -1,0 +1,46 @@
+extends layout 
+
+block content 
+   p= message
+   p Ideally, a map showing directions should appear here. 
+   p More importantly, there needs to be a button to allow the driver to
+      =" tell the website that he has arrived at the pickup location."
+      =" On click, the button disappears and the div displays a message"
+      =" saying 'thanks, we'll let them know'"
+   p Finally, the page will just sit here until the website redirects 
+      =" the driver to the assignment complete page upon assignment completion"
+      
+      
+      
+   // The following script and div are the for the "I'm here" button.
+   // Right now, this script doesn't actually tell the server anything.
+   // We need to add that in somehow...
+   script. 
+      function tellServerImHere() {
+         var xhttp = new XMLHttpRequest();
+         xhttp.onreadystatechange = function() {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+               document.getElementById("imhere").innerHTML = xhttp.responseText; 
+            }
+         };
+         xhttp.open("GET", "let_them_know.txt", true);
+         xhttp.send(); 
+         
+         // Continue by alerting the customer
+         console.log("continuing by alerting the customer");
+         var script = document.createElement("script"); 
+         script.type = "text/javascript"; 
+         script.src = "javascripts/setPickUpReadyStatusOn.js"; 
+         document.body.appendChild(script);         
+      }      
+   div(id="imhere")
+      button(type='button', onclick='tellServerImHere()') I'm here
+      
+      
+      
+   // The map will go in this div   
+   // Try to set the height/width of this div in the initGoogleMaps-ass.js file
+   div(id="map-canvas-ass", style="height:50%; width:50;") 
+   script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=')
+   script(type='text/javascript', src='/javascripts/initGoogleMap-ass.js')   
+      

@@ -1,0 +1,12 @@
+extends layout
+
+block content 
+   p= message
+   
+   div(id="map-canvas", style="height:75%; width:75%;")
+   script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=')
+   script(type='text/javascript', src='/javascripts/initGoogleMap.js')
+   
+   // This script will poll the database to see if the driver has arrived
+   // at the pickup location yet. 
+   script(type='text/javascript', src='/javascripts/pollOnTheWay.js') 

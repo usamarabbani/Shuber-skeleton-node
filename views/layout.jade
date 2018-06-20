@@ -1,0 +1,22 @@
+doctype html
+html
+   script.
+      function logout() {
+         //console.log("you clicked the logout button");
+         // execute a script
+         var script = document.createElement("script"); 
+         script.type =  "text/javascript"; 
+         script.src = "javascripts/logout.js"; 
+         document.body.appendChild(script); 
+      }
+		
+   head.centered
+      title=title
+      link(type='text/css', rel='stylesheet', href='/stylesheets/style.css')
+      
+      div.logout
+         form(name="logoutform", method="post", action="/logout")
+            // logout button
+            button(type="submit", name="logoutbutton") logout
+   body.centered
+      block content

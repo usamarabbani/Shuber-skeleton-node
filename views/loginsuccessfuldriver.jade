@@ -1,0 +1,21 @@
+extends layout
+
+block content          
+    h1= title
+    script. 
+        if ("geolocation" in navigator) {
+            /* geolocation is available */
+            navigator.geolocation.getCurrentPosition(function(position) {
+                document.getElementById("inputUserLon").value = position.coords.longitude;
+                document.getElementById("inputUserLat").value = position.coords.latitude;
+            });
+        } else {
+            /* geolocation is not available */
+        }
+        
+    form#formGetLocation(name="getlocation", method="post", action="/loginsuccessfuldriver")
+        input#inputUserLon(type="text", placeholder="userlon", name="userlon", readonly)
+        input#inputUserLat(type="text", placeholder="userlat", name="userlat", readonly)
+        br
+        br
+        button#btnSubmit(type="submit") submit

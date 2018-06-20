@@ -1,0 +1,44 @@
+extends layout
+
+block content 
+    h1= title    
+    
+    script. 
+        if ("geolocation" in navigator) {
+            /* geolocation is available */ 
+            navigator.geolocation.getCurrentPosition(function(position) {
+                document.getElementById("inputUserLon").value = position.coords.longitude; 
+                document.getElementById("inputUserLat").value = position.coords.latitude;
+            });
+        } else {
+            /* geolocation not available */ 
+        }
+
+    section(style="height:100%; width:100%;")    
+      div.rr-left-sidebar
+
+        p= greeting
+        p Request a ride on this page. Enter your current location and destination.
+        form#formRequestRide(name"requestride", method="post", action="/requestride") 
+            = " Current location" 
+            br
+            input#inputUserLon(type="text", placeholder="userlon", name="userlon", readonly)
+            br
+            input#inputUserLat(type="text", placeholder="userlat", name="userlat", readonly)
+            br
+            br
+            = " Destination" 
+            br
+            input#inputDestinationStreet(type="text", placeholder="123 main st", name="userdestst")
+            br
+            input#inputDestinationZip(type="text", placeholder="94303", name="userdestzip")
+            br
+            br
+            button#btnSubmit(type="submit") Request Ride
+
+      div.rr-right-content(style="height:50%; width:50;")
+        div(id="map-canvas-rr", style="height:100%; width:100%;")
+        script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=')
+        script(type='text/javascript', src='/javascripts/initGoogleMap-rr.js')
+        p map goes right here
+

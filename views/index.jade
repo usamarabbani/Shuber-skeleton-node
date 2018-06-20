@@ -1,0 +1,48 @@
+<<<<<<< Updated upstream
+extends layout
+extends ../node_modules/jade-bootstrap/_bootstrap
+
+
+=======
+<<<<<<< HEAD
+
+
+extends layout
+=======
+extends ../node_modules/jade-bootstrap/_bootstrap
+>>>>>>> origin/bootstrap-update
+
+>>>>>>> Stashed changes
+append styles
+
+  link(href='/stylesheets/cover.css', rel='stylesheet')
+
+block body
+  .container
+    form.form-signin(method='post', action='/')
+      h1.form-signin-heading Welcome to shUber ᕕ( ᐛ )ᕗ 
+      label.sr-only(for='Username') Username
+      input#inputUsername.form-control(type='text', placeholder='Username', name='username' required='', autofocus='')
+      button.btn.btn-lg.btn-primary.btn-block(type='submit', name='buttonname', value='signin') Sign in     
+      br
+<<<<<<< Updated upstream
+      
+=======
+      br
+<<<<<<< HEAD
+      input#inputUserName(type="text", placeholder="Username", name="username", style="width: 292px; height: 50px;")
+      br      
+      button#btnSignIn(type="submit", name="buttonname", value="signin", style="width: 300px; height: 50px;") Sign In
+=======
+>>>>>>> origin/bootstrap-update
+>>>>>>> Stashed changes
+      br
+      +carousel("Slideshow",[
+	{image:"http://funnyasduck.net/wp-content/uploads/2014/08/funny-pictures-where-can-i-take-you-taxi-dog.jpg"},
+	{image:"images/slide2.jpg",p:"Carousel Caption #2"},
+	{image:"images/slide3.jpg",p:"Carousel Caption #3"},
+	{image:"images/slide4.jpg",p:"Carousel Caption #4"}
+])
+
+
+      
