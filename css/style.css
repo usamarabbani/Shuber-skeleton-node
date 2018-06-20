@@ -1,0 +1,940 @@
+/*!
+ * Start Bootstrap - Stylish Portfolio Bootstrap Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Global Styles */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.text-vertical-center {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.text-vertical-center h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 4.5em;
+    font-weight: 700;
+}
+
+/* Custom Button Styles */
+
+.btn-teal {
+    border-radius: 0;
+    color: #fff;
+    background-color: #1e1e35;
+}
+
+.btn-teal:hover,
+.btn-teal:focus,
+.btn-teal:active {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+.btn-tealMaps {
+    border-radius: 0;
+    color: #fff;
+    background-color: #1e1e35;
+    height: 25px;
+    width: 75px;
+    font-size: 15px;
+}
+
+.btn-tealMaps:hover,
+.btn-tealMaps:focus,
+.btn-tealMaps:active {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+.btn-dark {
+    border-radius: 0;
+    color: #fff;
+    background-color: #337ab7;;
+}
+
+.btn-dark:hover,
+.btn-dark:focus,
+.btn-dark:active {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.btn-light {
+    border-radius: 0;
+    color: #333;
+    background-color: rgb(255, 255, 255);
+}
+
+.btn-light:hover,
+.btn-light:focus,
+.btn-light:active {
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* SQUARED CHECK BOX */
+.squaredThree {
+    width: 20px;
+    margin: 10px auto;
+    position: relative;
+
+}
+
+.squaredThree label {
+    cursor: pointer;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    right: 30px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, .4);
+    -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, .4);
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, .4);
+
+    background: -webkit-linear-gradient(top, #222 0%, #45484d 100%);
+    background: -moz-linear-gradient(top, #222 0%, #45484d 100%);
+    background: -o-linear-gradient(top, #222 0%, #45484d 100%);
+    background: -ms-linear-gradient(top, #222 0%, #45484d 100%);
+    background: linear-gradient(top, #222 0%, #45484d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#222', endColorstr='#45484d', GradientType=0);
+}
+
+.squaredThree label:after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    position: absolute;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    content: '';
+    width: 9px;
+    height: 5px;
+    background: transparent;
+    top: 4px;
+    left: 4px;
+    border: 3px solid #fcfff4;
+    border-top: none;
+    border-right: none;
+
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.squaredThree label:hover::after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    filter: alpha(opacity=30);
+    opacity: 0.3;
+}
+
+.squaredThree input[type=checkbox]:checked + label:after {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+}
+
+/*Navigation at Top of Page*/
+.navattop {
+    clear: both;
+    overflow: hidden;
+    max-height: 0;
+}
+
+.navattop a {
+    padding: 0.2em 0.5em;
+    font-size: 2em;
+    color: #ffffff;
+    text-decoration: inherit;
+
+
+}
+
+.navattop.active {
+    max-height: 40em;
+}
+
+@media all and (min-width: 46.8em) {
+    .navattop {
+        max-height: none;
+        float: right;
+        clear: none;
+
+    }
+
+    .navattop li {
+        list-style-type: none;
+        float: left;
+    }
+
+    .navattop a:hover {
+        color: orange;
+    }
+}
+
+/* End Navigation */
+
+/* Custom Horizontal Rule */
+
+hr.small {
+    max-width: 100px;
+}
+
+/* Side Menu */
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    margin-right: -250px;
+    overflow-y: auto;
+    background: #1e1e35;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 55px;
+    font-size: 18px;
+    line-height: 55px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+#menu-toggle {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+#sidebar-wrapper.active {
+    right: 250px;
+    width: 250px;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+
+.toggle {
+    margin: 5px 5px 0 0;
+}
+
+/* Header */
+
+.header {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url(../img/vanfastdark.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    z-index: 0;
+}
+
+.header1 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url(../img/bandagedark.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    z-index: 0;
+}
+
+/* Login */
+
+.loginbox {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    margin: 100px auto;
+    height: 75%;
+    width: auto;
+    text-align: center;
+    background-color: #1e1e35;
+    z-index: 99;
+    border: 1px solid #1e1e35;
+    border-radius: 3px;
+    outline: none;
+    line-height: 1.25;
+
+}
+
+.background-line {
+    display: table;
+    white-space: nowrap;
+}
+
+.background-line:before, .background-line:after {
+    border-top: 1px solid #3a3a48;
+    content: '';
+    display: table-cell;
+    position: relative;
+    top: 4em;
+    width: 50%;
+}
+
+.background-line > span {
+    padding: 0px 60px;
+    font-family: ff-clan-web-pro-wide, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.fieldbottom {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.fieldtop {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+
+}
+
+.text-input {
+    width: 50%;
+    padding: 15px 15px;
+    font-size: 15px;
+    margin-bottom: 0px;
+    background: white;
+    border: 1px solid #cdcdd3;
+    border-radius: 3px;
+    outline: none;
+    line-height: 1.25;
+    color: #3a3a48;
+}
+
+.text-input:hover, .icon-input input:hover, .select select:hover {
+    border-color: #b2b2ba;
+}
+
+.text-input:focus, .icon-input input:focus, .select select:focus, .focus.text-input, .icon-input input.focus, .select select.focus {
+    box-shadow: 0 0 5px 0 #71d8ea;
+    border-color: #1fbad6;
+}
+
+.text-input:disabled, .icon-input input:disabled, .select select:disabled, .disabled.text-input, .icon-input input.disabled, .select select.disabled {
+    background: #f2f2f4;
+    color: #cdcdd3;
+    cursor: default;
+}
+
+.text-input:disabled:hover, .icon-input input:disabled:hover, .select select:disabled:hover, .disabled.text-input:hover, .icon-input input.disabled:hover, .select select.disabled:hover {
+    border-color: #cdcdd3;
+}
+
+/* About */
+
+.about {
+    padding: 50px 0;
+    height:100%;
+    height:100%;
+    width:100%;
+}
+
+/* Services */
+
+.services {
+    padding: 50px 0;
+}
+
+.service-item {
+    margin-bottom: 30px;
+}
+
+/* Callout */
+
+.callout {
+    display: table;
+    width: 100%;
+    height: 400px;
+    color: #fff;
+    background: url(../img/callout.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+/* Call to Action */
+
+.call-to-action {
+    padding: 50px 0;
+}
+
+.call-to-action .btn {
+    margin: 10px;
+}
+
+/* Map */
+
+.map {
+    height: 500px;
+}
+
+@media (max-width: 768px) {
+    .map {
+        height: 75%;
+    }
+}
+
+/* Footer */
+
+footer {
+    padding: 100px 0;
+}
+
+/*STYLES FOR LOGIN STUFF*/
+
+/* remove codrops styles and reset the whole thing */
+#containerLogin {
+    text-align: left;
+    /*min-height: calc(690px * (90 / 150));*/
+    height: 1000px;
+    min-height: 800px;
+    font-family: "Trebuchet MS", "Myriad Pro", Arial, sans-serif;
+
+}
+
+/** fonts used for the icons **/
+@font-face {
+    font-family: 'FontomasCustomRegular';
+    src: url('../fonts/fontomas-webfont.eot');
+    src: url('../fonts/fontomas-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/fontomas-webfont.woff') format('woff'),
+    url('../fonts/fontomas-webfont.ttf') format('truetype'),
+    url('../fonts/fontomas-webfont.svg#FontomasCustomRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FranchiseRegular';
+    src: url('../fonts/franchise-bold-webfont.eot');
+    src: url('../fonts/franchise-bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/franchise-bold-webfont.woff') format('woff'),
+    url('../fonts/franchise-bold-webfont.ttf') format('truetype'),
+    url('../fonts/franchise-bold-webfont.svg#FranchiseRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+a.hiddenanchor {
+    display: none;
+}
+
+/** The wrapper that will contain our two forms **/
+#wrapper {
+    width: 60%;
+    right: 0px;
+    min-height: 560px;
+    margin: auto auto;
+    width: 450px;
+    position: relative;
+}
+
+/**** Styling the form elements **/
+
+/**** general text styling ****/
+#wrapper a {
+    color: rgb(95, 155, 198);
+    text-decoration: underline;
+}
+
+#wrapper h1 {
+    font-size: 50px;
+    color: orange;
+    padding: 2px 0 10px 0;
+    font-family: 'FranchiseRegular', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+
+#wrapper h1:after {
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin-top: 5px;
+    margin-bottom: 40px;
+    background: -moz-linear-gradient(left, rgba(147, 184, 189, 0) 0%, rgba(147, 184, 189, 0.8) 20%, rgba(147, 184, 189, 1) 53%, rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(147, 184, 189, 0)), color-stop(20%, rgba(147, 184, 189, 0.8)), color-stop(53%, rgba(147, 184, 189, 1)), color-stop(79%, rgba(147, 184, 189, 0.8)), color-stop(100%, rgba(147, 184, 189, 0)));
+    background: -webkit-linear-gradient(left, rgba(147, 184, 189, 0) 0%, rgba(147, 184, 189, 0.8) 20%, rgba(147, 184, 189, 1) 53%, rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+    background: -o-linear-gradient(left, rgba(147, 184, 189, 0) 0%, rgba(147, 184, 189, 0.8) 20%, rgba(147, 184, 189, 1) 53%, rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+    background: -ms-linear-gradient(left, rgba(147, 184, 189, 0) 0%, rgba(147, 184, 189, 0.8) 20%, rgba(147, 184, 189, 1) 53%, rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+    background: linear-gradient(left, rgba(147, 184, 189, 0) 0%, rgba(147, 184, 189, 0.8) 20%, rgba(147, 184, 189, 1) 53%, rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+}
+
+#wrapper h2 {
+    font-size: 30px;
+    color: rgb(6, 106, 117);
+    padding: 2px 0 0 0;
+    font-family: 'FranchiseRegular', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 0;
+}
+
+
+#wrapper h2:after {
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin-top: 5px;
+    margin-bottom: 0;
+    background: -moz-linear-gradient(left, rgba(147, 184, 189, 0) 0%, rgba(147, 184, 189, 0.8) 20%, rgba(147, 184, 189, 1) 53%, rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(147, 184, 189, 0)), color-stop(20%, rgba(147, 184, 189, 0.8)), color-stop(53%, rgba(147, 184, 189, 1)), color-stop(79%, rgba(147, 184, 189, 0.8)), color-stop(100%, rgba(147, 184, 189, 0)));
+    background: -webkit-linear-gradient(left, rgba(147, 184, 189, 0) 0%, rgba(147, 184, 189, 0.8) 20%, rgba(147, 184, 189, 1) 53%, rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+    background: -o-linear-gradient(left, rgba(147, 184, 189, 0) 0%, rgba(147, 184, 189, 0.8) 20%, rgba(147, 184, 189, 1) 53%, rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+    background: -ms-linear-gradient(left, rgba(147, 184, 189, 0) 0%, rgba(147, 184, 189, 0.8) 20%, rgba(147, 184, 189, 1) 53%, rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+    background: linear-gradient(left, rgba(147, 184, 189, 0) 0%, rgba(147, 184, 189, 0.8) 20%, rgba(147, 184, 189, 1) 53%, rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+}
+
+#wrapper p {
+    margin-bottom: 10px;
+}
+
+#wrapper p:first-child {
+    margin: 0px;
+}
+
+#wrapper label {
+    color: #ffa500;;
+    position: relative;
+}
+
+/**** advanced input styling ****/
+/* placeholder */
+::-webkit-input-placeholder {
+    color: rgb(190, 188, 188);
+    font-style: italic;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    color: rgb(190, 188, 188);
+    font-style: italic;
+}
+
+input {
+    outline: none;
+}
+
+/* all the input except submit and checkbox */
+#wrapper input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]) {
+    width: 80%;
+    margin-top: 3px;
+    padding: 6px 5px 6px 32px;
+    border: 1px solid rgb(178, 178, 178);
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset;
+    -moz-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset;
+    box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+#wrapper input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):active,
+#wrapper input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):focus {
+    border: 1px solid rgba(91, 90, 90, 0.7);
+    color: darkgray;
+    background: rgba(238, 236, 240, 0.2);
+    -webkit-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.9) inset;
+    -moz-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.9) inset;
+    box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.9) inset;
+}
+
+/** the magic icon trick ! **/
+[data-icon]:after {
+    content: attr(data-icon);
+    font-family: 'FontomasCustomRegular';
+    color: rgb(106, 159, 171);
+    position: absolute;
+    left: 10px;
+    top: 35px;
+    width: 30px;
+}
+
+/*styling both submit buttons */
+#wrapper p.button input {
+    cursor: pointer;
+    background: rgb(61, 157, 179);
+    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
+    font-size: 18px;
+    border: 1px solid rgb(28, 108, 122);
+    margin-bottom: 5px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+#wrapper p.button input:hover {
+    background: rgb(160, 200, 195);
+}
+
+#wrapper p.button input:active,
+#wrapper p.button input:focus {
+    background: rgb(40, 137, 154);
+    position: relative;
+    top: 1px;
+    border: 1px solid rgb(12, 76, 87);
+    -webkit-box-shadow: 0px 1px 6px 4px rgba(0, 0, 0, 0.2) inset;
+    -moz-box-shadow: 0px 1px 6px 4px rgba(0, 0, 0, 0.2) inset;
+    box-shadow: 0px 1px 6px 4px rgba(0, 0, 0, 0.2) inset;
+}
+
+p.login.button,
+p.signin.button {
+    text-align: center;
+    width: 30%;
+    margin: 0 0 0 120px;
+}
+
+/* styling the checkbox "keep me logged in"*/
+.keeplogin {
+    margin-top: -5px;
+}
+
+.keeplogin input,
+.keeplogin label {
+    display: inline-block;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.keeplogin input#loginkeeping {
+    margin-right: 5px;
+}
+
+.keeplogin label {
+    width: 80%;
+}
+
+/*styling the links to change from one form to another */
+
+p.change_link {
+    position: absolute;
+    color: rgb(127, 124, 124);
+    left: 0px;
+    height: 0px;
+    width: 350px;
+    padding: 17px 30px 20px 30px;
+    font-size: 16px;
+    text-align: right;
+    border-top: 1px solid slategray;
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+
+);
+}
+
+#wrapper p.change_link a {
+    display: inline-block;
+    font-weight: bold;
+    background: rgb(40, 137, 154);
+    padding: 2px 6px;
+    color: whitesmoke;
+    margin-left: 10px;
+    text-decoration: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid rgb(203, 213, 214);
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+    transition: all 0.4s linear;
+}
+
+#wrapper p.change_link a:hover {
+    color: rgb(57, 191, 215);
+    background: rgb(247, 247, 247);
+    border: 1px solid rgb(74, 179, 198);
+}
+
+#wrapper p.change_link a:active {
+    position: relative;
+    top: 1px;
+}
+
+/** Styling both forms **/
+#register,
+#login {
+    position: absolute;
+    top: 5%;
+    width: 80%;
+    padding: 18px 6% 60px 6%;
+    margin: 0 0 30px 0;
+    border: 2px solid rgba(105, 108, 109, 0.7);
+    -webkit-box-shadow: 0pt 2px 5px rgba(105, 108, 109, 0.7), 0px 0px 2px 3px black inset;
+    -moz-box-shadow: 0pt 2px 5px rgba(105, 108, 109, 0.7), 0px 0px 2px 3px black inset;
+    box-shadow: 0pt 2px 5px rgba(105, 108, 109, 0.7), 0px 0px 2px 3px black inset;
+    -webkit-box-shadow: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #1e1e35;
+}
+
+#register {
+    z-index: 21;
+    opacity: 0;
+
+}
+
+#login {
+    z-index: 22;
+
+}
+
+.filler {
+    display: block;
+    padding: 25px 0 30px 0;
+}
+
+#toregister:target ~ #wrapper #register,
+#tologin:target ~ #wrapper #login {
+    z-index: 22;
+    -webkit-animation-delay: .6s;
+    -webkit-animation-timing-function: ease-in;
+    -moz-animation-delay: .6s;
+    -moz-animation-timing-function: ease-in;
+    -o-animation-delay: .6s;
+    -o-animation-timing-function: ease-in;
+    -ms-animation-delay: .6s;
+    -ms-animation-timing-function: ease-in;
+    animation-delay: .6s;
+    animation-timing-function: ease-in;
+    -webkit-animation-name: scaleIn;
+    -moz-animation-name: scaleIn;
+    -ms-animation-name: scaleIn;
+    -o-animation-name: scaleIn;
+    animation-name: scaleIn;
+}
+
+#toregister:target ~ #wrapper #login,
+#tologin:target ~ #wrapper #register {
+    -webkit-animation-timing-function: ease-out;
+    -moz-animation-timing-function: ease-out;
+    -o-animation-timing-function: ease-out;
+    -ms-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    -webkit-animation-name: scaleOut;
+    -moz-animation-name: scaleOut;
+    -ms-animation-name: scaleOut;
+    -o-animation-name: scaleOut;
+    animation-name: scaleOut;
+}
+
+#usertype {
+
+    margin-top: 3px;
+    border: 1px solid rgb(178, 178, 178);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    width: 2.5em;
+    background: #D1D3D4;
+    border-radius: 3px 0 0 3px;
+}
+
+/** the actual animation, credit where due : http://daneden.me/animate/ ***/
+.animate {
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+
+    -moz-animation-duration: 0.5s;
+    -moz-animation-fill-mode: both;
+
+    -o-animation-duration: 0.5s;
+    -o-animation-fill-mode: both;
+
+    -ms-animation-duration: 0.5s;
+    -ms-animation-fill-mode: both;
+
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+
+/** yerk some ugly IE fixes 'cause I know someone will ask "why does it look ugly in IE?", no matter how many warnings I will put in the article */
+
+.lt8 #wrapper input {
+    padding: 10px 5px 10px 32px;
+    width: 92%;
+}
+
+.lt8 #wrapper input[type=checkbox] {
+    width: 10px;
+    padding: 0;
+}
+
+.lt8 #wrapper h1 {
+    color: #066A75;
+}
+
+.lt8 #register {
+    display: none;
+}
+
+.lt8 p.change_link,
+.ie9 p.change_link {
+    position: absolute;
+    height: 30px;
+    background: transparent;
+}
+
+/** Google MAPS */
+
+
+.vcenter {
+    position: relative;
+    top: 5%;
+    text-align: center;
+}
+
+#destination-input:focus {
+    border-color: #4d90fe;
+}
+
+#destination-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 200px;
+}
+
+.controls {
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+#map {
+    height:75%;
+    width:100%;
+}
+
+#Crappo {
+    position: static;
+    width: 100%;
+    height: 200px;
+    background-color: #1e1e35;
+    color: whitesmoke;
+    margin-bottom: 50px;
+}
+
+
+
+
+.controls {
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+
